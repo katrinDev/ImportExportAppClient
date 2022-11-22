@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: cornflowerblue;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.project.controllers.MainController">
+   <children>
+      <Label layoutX="107.0" layoutY="96.0" prefHeight="111.0" prefWidth="399.0" style="-fx-font-weight: 700;" text="Система контроля внешнеторговых операций" textAlignment="CENTER" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Button layoutX="159.0" layoutY="238.0" mnemonicParsing="false" onAction="#onAuthBtnClick" prefHeight="38.0" prefWidth="109.0" style="-fx-font-weight: 700; -fx-border-radius: 10; -fx-background-radius: 10; -fx-background-color: #F4A460; -fx-border-color: #D2691E;" text="Вход" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="328.0" layoutY="238.0" mnemonicParsing="false" onAction="#onRegisterBtnClick" prefHeight="38.0" prefWidth="109.0" style="-fx-font-weight: 700;
+      -fx-border-radius: 10; -fx-background-radius: 10; -fx-background-color: #F4A460; -fx-border-color: #D2691E;" text="Регистрация" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
