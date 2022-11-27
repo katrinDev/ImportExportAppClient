@@ -5,20 +5,20 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: cornflowerblue;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.project.controllers.AuthenticationController">
-   <Button fx:id="submitBtn" layoutX="311.0" layoutY="281.0" mnemonicParsing="false" onAction="#onSubmitBtnClick" prefHeight="38.0" prefWidth="90.0" style="-fx-font-weight: 700; -fx-border-radius: 10; -fx-background-radius: 10; -fx-background-color: #F4A460; -fx-border-color: #D2691E;" text="Ок" textFill="WHITE">
+   <Button fx:id="submitBtn" layoutX="309.0" layoutY="296.0" mnemonicParsing="false" onAction="#onSubmitBtnClick" prefHeight="38.0" prefWidth="90.0" style="-fx-font-weight: 700; -fx-border-radius: 10; -fx-background-radius: 10; -fx-background-color: #F4A460; -fx-border-color: #D2691E;" text="Ок" textFill="WHITE">
       <font>
          <Font name="System Bold" size="14.0" />
       </font></Button>
-   <TextField fx:id="textFieldLogin" layoutX="225.0" layoutY="131.0" />
-   <PasswordField fx:id="passwordField" layoutX="225.0" layoutY="200.0" />
-   <Label layoutX="132.0" layoutY="134.0" style="-fx-font-size: 14; -fx-font-weight: 700;" text="Логин: " textFill="WHITE" />
-   <Label layoutX="132.0" layoutY="203.0" style="-fx-font-size: 14; -fx-font-weight: 700;" text="Пароль: " textFill="WHITE" />
-   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="182.0" layoutY="42.0" prefHeight="38.0" prefWidth="220.0" style="-fx-font-weight: 700;" text="Аутентификация" textFill="WHITE">
+   <TextField fx:id="textFieldLogin" layoutX="244.0" layoutY="131.0" prefHeight="26.0" prefWidth="156.0" />
+   <PasswordField fx:id="passwordField" layoutX="244.0" layoutY="187.0" prefHeight="26.0" prefWidth="156.0" />
+   <Label layoutX="164.0" layoutY="134.0" style="-fx-font-size: 14; -fx-font-weight: 700;" text="Логин: " textFill="WHITE" />
+   <Label layoutX="164.0" layoutY="190.0" style="-fx-font-size: 14; -fx-font-weight: 700;" text="Пароль: " textFill="WHITE" />
+   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="176.0" layoutY="52.0" prefHeight="38.0" prefWidth="220.0" style="-fx-font-weight: 700;" text="Аутентификация" textFill="WHITE">
       <font>
          <Font size="15.0" />
       </font>
    </Label>
-   <Button fx:id="backBtn" layoutX="434.0" layoutY="281.0" mnemonicParsing="false" onAction="#onBackBtnClick" prefHeight="38.0" prefWidth="90.0" style="-fx-font-weight: 700; -fx-border-radius: 10; -fx-background-radius: 10; -fx-background-color: #F4A460; -fx-border-color: #D2691E;" text="Назад" textFill="WHITE">
+   <Button fx:id="backBtn" layoutX="431.0" layoutY="296.0" mnemonicParsing="false" onAction="#onBackBtnClick" prefHeight="38.0" prefWidth="90.0" style="-fx-font-weight: 700; -fx-border-radius: 10; -fx-background-radius: 10; -fx-background-color: #F4A460; -fx-border-color: #D2691E;" text="Назад" textFill="WHITE">
       <font>
          <Font size="14.0" />
       </font></Button>

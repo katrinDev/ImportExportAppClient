@@ -3,17 +3,18 @@ package org.project.controllers;
 import com.google.gson.Gson;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import org.project.TCP.Request;
 import org.project.TCP.Response;
 import org.project.clientMain.Client;
 import org.project.clientMain.Main;
 import org.project.entities.Person;
-import org.project.entities.Role;
 import org.project.entities.User;
 import org.project.enums.RequestType;
 import org.project.enums.ResponseStatus;
@@ -71,7 +72,16 @@ public class SignUpController {
                 alert.setTitle("Пользователь добавлен");
                 alert.setHeaderText(response.getResponseMessage());
                 alert.showAndWait();
-                Main.setRoot("/main");
+
+                Stage stage = (Stage) anchorPane.getScene().getWindow();
+                stage.close();
+
+                Scene scene = new Scene(Main.loadFXML("/main"));
+                stage = new Stage();
+                stage.setTitle("Магазин электроники и бытовой техники");
+                stage.setScene(scene);
+                stage.show();
+
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Ошибка");

@@ -1,14 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.project.controllers.AdminMenuController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1550.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.project.controllers.AdminMenuController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutY="-16.0" style="-fx-font-size: 14; -fx-background-color: rgb(100, 149, 237, 0.8); -fx-font-weight: 600; -fx-text-fill: WHITE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MenuBar prefHeight="51.0" prefWidth="1500.0" style="-fx-background-color: #F4A460; -fx-border-color: #D2691E; -fx-font-size: 15; -fx-padding: 6; -fx-font-style: italic; -fx-border-width: 2;">
+              <menus>
+                <Menu mnemonicParsing="false" text="Работа с пользователями">
+                  <items>
+                        <MenuItem mnemonicParsing="false" onAction="#onClickShowUsers" text="Список пользователей" />
+                    <MenuItem mnemonicParsing="false" onAction="#onClickChangeRole" text="Изменение роли" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickChangeUserData" text="Изменение данных пользователя" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickAddUser" text="Добавление пользователя" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickDeleteUser" text="Удаление пользователя" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Работа с сотрудниками">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#onClickShowEmployees" text="Список сотрудников" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickEditEmployee" text="Изменение данных сотрудника" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickAddEmployee" text="Добавление сотрудника" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickDeleteEmployee" text="Удаление сотрудника и его аккаунтов" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Работа с товарными группами">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#onClickAddGroup" text="Добавить группу" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickShowGroups" text="Просмотреть существующие группы" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickDeleteGroup" text="Удалить группу" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickChangeGroupData" text="Изменить данные группы" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Работа с номенклатурой товаров">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#onClickShowItems" text="Номенклатура компании" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickChangeItem" text="Изменить данные продукта" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickAddItem" text="Добавить новый продукт" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickDeleteItem" text="Удалить продукт" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Статистика">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#onClickBestEmployee" text="Сотрудник месяца" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickSuccessfulTrades" text="Наиболее успешные сделки месяца" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickCompare" text="Сравнение с предыдущим месяцем" />
+                    </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="Работа с текущим аккаунтом">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#onClickShowAccountData" text="Показать данные" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickChangeAccountData" text="Изменить данные" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickDeleteAccount" text="Удалить аккаунт" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Работа с личными аккаунтами">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#onClickShowAccounts" text="Показать список аккаунтов" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickChangeAccountsData" text="Изменить данные аккаунтов" />
+                    </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+            <TextArea fx:id="textArea" prefHeight="100.0" prefWidth="400.0">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="300.0" right="300.0" top="300.0" />
+               </VBox.margin>
+            </TextArea>
+         </children>
+      </VBox>
+   </children>
 </AnchorPane>
