@@ -1,5 +1,6 @@
 package org.project.controllers;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.layout.Pane;
@@ -29,4 +30,8 @@ public class MainController {
         Main.setRoot("/signUp");
     }
 
+    @FXML
+    private void onQuitBtnClick(ActionEvent actionEvent) throws IOException {
+        Platform.exit();
+    }
 }

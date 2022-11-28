@@ -60,9 +60,9 @@ public class AuthenticationController {
             alert.hide();
 
             if(response.getResponseStatus() == ResponseStatus.OK) {
-                 System.out.println(response);
                  Role role = new Gson().fromJson(response.getResponseData(), Role.class);
-                 System.out.println(role);
+
+                 System.out.println("\nАутентификация прошла успешно!");
                  alert.close();
                  if(role.getRoleId() == 1){
                      Main.setRoot("/adminMenu");

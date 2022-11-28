@@ -8,9 +8,9 @@
    <children>
       <VBox alignment="TOP_CENTER" layoutY="-16.0" style="-fx-font-size: 14; -fx-background-color: rgb(100, 149, 237, 0.8); -fx-font-weight: 600; -fx-text-fill: WHITE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <MenuBar prefHeight="51.0" prefWidth="1500.0" style="-fx-background-color: #F4A460; -fx-border-color: #D2691E; -fx-font-size: 15; -fx-padding: 6; -fx-font-style: italic; -fx-border-width: 2;">
+            <MenuBar prefHeight="51.0" prefWidth="1500.0" style="-fx-background-color: #F4A460; -fx-border-color: #D2691E; -fx-font-size: 15; -fx-padding: 10; -fx-font-style: italic; -fx-border-width: 2;">
               <menus>
-                <Menu mnemonicParsing="false" text="Работа с пользователями">
+                <Menu mnemonicParsing="false" text="Пользователи">
                   <items>
                         <MenuItem mnemonicParsing="false" onAction="#onClickShowUsers" text="Список пользователей" />
                     <MenuItem mnemonicParsing="false" onAction="#onClickChangeRole" text="Изменение роли" />
@@ -19,7 +19,7 @@
                         <MenuItem mnemonicParsing="false" onAction="#onClickDeleteUser" text="Удаление пользователя" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Работа с сотрудниками">
+                <Menu mnemonicParsing="false" text="Сотрудники">
                   <items>
                     <MenuItem mnemonicParsing="false" onAction="#onClickShowEmployees" text="Список сотрудников" />
                         <MenuItem mnemonicParsing="false" onAction="#onClickEditEmployee" text="Изменение данных сотрудника" />
@@ -27,7 +27,7 @@
                         <MenuItem mnemonicParsing="false" onAction="#onClickDeleteEmployee" text="Удаление сотрудника и его аккаунтов" />
                   </items>
                 </Menu>
-                  <Menu mnemonicParsing="false" text="Работа с товарными группами">
+                  <Menu mnemonicParsing="false" text="Товарные группы">
                     <items>
                       <MenuItem mnemonicParsing="false" onAction="#onClickAddGroup" text="Добавить группу" />
                         <MenuItem mnemonicParsing="false" onAction="#onClickShowGroups" text="Просмотреть существующие группы" />
@@ -35,7 +35,7 @@
                         <MenuItem mnemonicParsing="false" onAction="#onClickChangeGroupData" text="Изменить данные группы" />
                     </items>
                   </Menu>
-                  <Menu mnemonicParsing="false" text="Работа с номенклатурой товаров">
+                  <Menu mnemonicParsing="false" text="Номенклатура товаров">
                     <items>
                       <MenuItem mnemonicParsing="false" onAction="#onClickShowItems" text="Номенклатура компании" />
                         <MenuItem mnemonicParsing="false" onAction="#onClickChangeItem" text="Изменить данные продукта" />
@@ -43,21 +43,22 @@
                         <MenuItem mnemonicParsing="false" onAction="#onClickDeleteItem" text="Удалить продукт" />
                     </items>
                   </Menu>
-                  <Menu mnemonicParsing="false" text="Статистика">
+                  <Menu mnemonicParsing="false" text="Статистика компании">
                     <items>
-                      <MenuItem mnemonicParsing="false" onAction="#onClickBestEmployee" text="Сотрудник месяца" />
-                        <MenuItem mnemonicParsing="false" onAction="#onClickSuccessfulTrades" text="Наиболее успешные сделки месяца" />
-                        <MenuItem mnemonicParsing="false" onAction="#onClickCompare" text="Сравнение с предыдущим месяцем" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickBestEmployee" text="Сотрудник месяца" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickCompanySuccessfulTrades" text="Наиболее успешные сделки месяца" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickCompareCompanyResults" text="Статистика по месяцам" />
                     </items>
                   </Menu>
-                <Menu mnemonicParsing="false" text="Работа с текущим аккаунтом">
+                <Menu mnemonicParsing="false" text="Текущий аккаунт">
                   <items>
-                    <MenuItem mnemonicParsing="false" onAction="#onClickShowAccountData" text="Показать данные" />
-                        <MenuItem mnemonicParsing="false" onAction="#onClickChangeAccountData" text="Изменить данные" />
-                        <MenuItem mnemonicParsing="false" onAction="#onClickDeleteAccount" text="Удалить аккаунт" />
+                      <MenuItem mnemonicParsing="false" onAction="#onClickExit" text="Выход" />
+                      <MenuItem mnemonicParsing="false" onAction="#onClickShowAccountData" text="Показать данные" />
+                      <MenuItem mnemonicParsing="false" onAction="#onClickDeleteAccount" text="Удалить аккаунт" />
+                      <MenuItem mnemonicParsing="false" onAction="#onClickChangeAccountData" text="Изменить данные" />
                   </items>
                 </Menu>
-                  <Menu mnemonicParsing="false" text="Работа с личными аккаунтами">
+                  <Menu mnemonicParsing="false" text="Личные аккаунты">
                     <items>
                       <MenuItem mnemonicParsing="false" onAction="#onClickShowAccounts" text="Показать список аккаунтов" />
                         <MenuItem mnemonicParsing="false" onAction="#onClickChangeAccountsData" text="Изменить данные аккаунтов" />

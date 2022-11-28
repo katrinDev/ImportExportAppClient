@@ -31,7 +31,6 @@ public class Client {
         in = new ObjectInputStream(socket.getInputStream());
         String message = String.valueOf(in.readObject());
         Response response = new Gson().fromJson(message, Response.class);
-        System.out.println(response);
         return response;
     }
 

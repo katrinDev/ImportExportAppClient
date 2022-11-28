@@ -1,14 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.project.controllers.EmployeeMenuController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1550.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.project.controllers.EmployeeMenuController">
+    <children>
+        <VBox alignment="TOP_CENTER" layoutY="-16.0" style="-fx-font-size: 14; -fx-background-color: rgb(100, 149, 237, 0.8); -fx-font-weight: 600; -fx-text-fill: WHITE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <MenuBar prefHeight="51.0" prefWidth="1500.0" style="-fx-background-color: #F4A460; -fx-border-color: #D2691E; -fx-font-size: 15; -fx-padding: 10; -fx-font-style: italic; -fx-border-width: 2;">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Текущие экспортные сделки">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#onClickShowExportTrades" text="Информация о сделках" />
+                                <MenuItem mnemonicParsing="false" onAction="#onClickAddExportTrade" text="Добавление сделки" />
+                                <MenuItem mnemonicParsing="false" onAction="#onClickChangeExportTrade" text="Изменение данных сделки" />
+                                <MenuItem mnemonicParsing="false" onAction="#onClickDeleteTrade" text="Подтвердить отмену сделки" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Текущие импортные сделки">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#onClickShowImportTrades" text="Информация о сделках" />
+                                <MenuItem mnemonicParsing="false" onAction="#onClickAddImportTrade" text="Добавление сделки" />
+                                <MenuItem mnemonicParsing="false" onAction="#onClickChangeImportTrade" text="Изменение данных сделки" />
+                                <MenuItem mnemonicParsing="false" onAction="#onClickDeleteTrade" text="Подтвердить отмену сделки" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Компании-партнеры">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#onClickFullPartnersList" text="Полный список партнеров" />
+                                <MenuItem mnemonicParsing="false" onAction="#onClickYourPartners" text="Партнеры, сделки с которыми Вы контролируете" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Личная история сделок">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#onClickShowYourTradesHistory" text="Показать историю сделок" />
+                                <MenuItem mnemonicParsing="false" onAction="#onClickFilterTrades" text="Фильтрация сделок" />
+                                <MenuItem mnemonicParsing="false" onAction="#onClickSearchTrade" text="Поиск сделки" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Личная статистика">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#onClickYourSuccessfulTrades" text="Успешные сделки месяца" />
+                                <MenuItem mnemonicParsing="false" onAction="#onClickCompareYourResults" text="Статистика по месяцам" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Статистика компании">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#onClickBestEmployee" text="Сотрудник месяца" />
+                                <MenuItem mnemonicParsing="false" onAction="#onClickCompanySuccessfulTrades" text="Наиболее успешные сделки месяца" />
+                                <MenuItem mnemonicParsing="false" onAction="#onClickCompareCompanyResults" text="Статистика по месяцам" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Сотрудники компании">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#onClickShowEmployees" text="Список сотрудников" />
+                                <MenuItem mnemonicParsing="false" onAction="#onClickSearchEmployee" text="Поиск сотрудника" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Ваши аккаунты">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#onClickExit" text="Выход из текущего аккаунта" />
+                                <MenuItem mnemonicParsing="false" onAction="#onClickShowAccountData" text="Показать данные текущего аккаунта" />
+                                <MenuItem mnemonicParsing="false" onAction="#onClickChangeAccountData" text="Изменить данные текущего аккаунта" />
+                                <MenuItem mnemonicParsing="false" onAction="#onClickDeleteAccount" text="Удалить текущий аккаунт" />
+                                <MenuItem mnemonicParsing="false" onAction="#onClickShowAccounts" text="Показать список аккаунтов" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <TextArea fx:id="textArea" prefHeight="100.0" prefWidth="400.0">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="300.0" right="300.0" top="300.0" />
+               </VBox.margin></TextArea>
+            </children>
+        </VBox>
+    </children>
 </AnchorPane>
