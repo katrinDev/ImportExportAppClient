@@ -27,6 +27,14 @@
                         <MenuItem mnemonicParsing="false" onAction="#onClickDeleteEmployee" text="Удаление сотрудника и его аккаунтов" />
                   </items>
                 </Menu>
+                  <Menu mnemonicParsing="false" text="Компании-партнеры">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Просмотреть данные" />
+                        <MenuItem mnemonicParsing="false" text="Изменить данные " />
+                        <MenuItem mnemonicParsing="false" text="Добавить партнера" />
+                        <MenuItem mnemonicParsing="false" text="Удалить партнера" />
+                    </items>
+                  </Menu>
                   <Menu mnemonicParsing="false" text="Товарные группы">
                     <items>
                       <MenuItem mnemonicParsing="false" onAction="#onClickAddGroup" text="Добавить группу" />
@@ -45,25 +53,15 @@
                   </Menu>
                   <Menu mnemonicParsing="false" text="Статистика компании">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#onClickBestEmployee" text="Сотрудник месяца" />
-                        <MenuItem mnemonicParsing="false" onAction="#onClickCompanySuccessfulTrades" text="Наиболее успешные сделки месяца" />
-                        <MenuItem mnemonicParsing="false" onAction="#onClickCompareCompanyResults" text="Статистика по месяцам" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickCompanyReport" text="Просмотр месячного отчета" />
                     </items>
                   </Menu>
-                <Menu mnemonicParsing="false" text="Текущий аккаунт">
+                <Menu mnemonicParsing="false" text="Аккаунт">
                   <items>
+                      <MenuItem mnemonicParsing="false" onAction="#onClickChangeAccountData" text="Изменить логин/пароль" />
                       <MenuItem mnemonicParsing="false" onAction="#onClickExit" text="Выход" />
-                      <MenuItem mnemonicParsing="false" onAction="#onClickShowAccountData" text="Показать данные" />
-                      <MenuItem mnemonicParsing="false" onAction="#onClickDeleteAccount" text="Удалить аккаунт" />
-                      <MenuItem mnemonicParsing="false" onAction="#onClickChangeAccountData" text="Изменить данные" />
                   </items>
                 </Menu>
-                  <Menu mnemonicParsing="false" text="Личные аккаунты">
-                    <items>
-                      <MenuItem mnemonicParsing="false" onAction="#onClickShowAccounts" text="Показать список аккаунтов" />
-                        <MenuItem mnemonicParsing="false" onAction="#onClickChangeAccountsData" text="Изменить данные аккаунтов" />
-                    </items>
-                  </Menu>
               </menus>
             </MenuBar>
             <TextArea fx:id="textArea" prefHeight="100.0" prefWidth="400.0">

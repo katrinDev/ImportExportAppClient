@@ -14,20 +14,18 @@ public class Main extends Application{
     static Scene scene;
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage){
+
         Client.createInstance();
+        try{
+            scene = new Scene(loadFXML("/main"));
+            stage.setTitle("Магазин электроники и бытовой техники");
+            stage.setScene(scene);
+            stage.show();
 
-        scene = new Scene(loadFXML("/main"));
-        stage.setTitle("Магазин электроники и бытовой техники");
-        stage.setScene(scene);
-        stage.show();
-
-        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-            @Override
-            public void handle(WindowEvent event) {
-                Client.closeEverything();
-            }
-        });
+        } catch(IOException e){
+            System.out.println("\nБыло вызвано IOException");
+        }
     }
 
     @Override

@@ -73,14 +73,15 @@ public class SignUpController {
                 alert.setHeaderText(response.getResponseMessage());
                 alert.showAndWait();
 
-                Stage stage = (Stage) anchorPane.getScene().getWindow();
-                stage.close();
+                /*Stage stage = (Stage) anchorPane.getScene().getWindow();
+                stage.close();*/
 
-                Scene scene = new Scene(Main.loadFXML("/main"));
+                Main.setRoot("/main");
+                /*Scene scene = new Scene(Main.loadFXML("/main"));
                 stage = new Stage();
                 stage.setTitle("Магазин электроники и бытовой техники");
                 stage.setScene(scene);
-                stage.show();
+                stage.show();*/
 
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);

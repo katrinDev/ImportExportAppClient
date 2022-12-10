@@ -15,14 +15,6 @@ public class MainController {
     @FXML
     private void onAuthBtnClick(ActionEvent actionEvent) throws IOException {
         Main.setRoot("/authentication");
-//        Stage stage = (Stage) pane.getScene().getWindow();
-//        stage.close();
-//
-//        Scene scene = new Scene(Main.loadFXML("/authentication"));
-//        stage = new Stage();
-//        stage.setTitle("Магазин электроники и бытовой техники");
-//        stage.setScene(scene);
-//        stage.show();
     }
 
     @FXML

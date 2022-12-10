@@ -61,6 +61,16 @@ public class EmployeeMenuController {
         textArea.setText("*Партнеры, сделки с которыми Вы контролируете*");
     }
 
+    //Номенклатура
+    @FXML
+    private void onClickShowItems(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
+        textArea.setText("*Список товаров*");
+    }
+    @FXML
+    private void onClickFilterItems(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
+        textArea.setText("*Фильтрация товара*");
+    }
+
 
     //Просмотр личной истории сделок
     @FXML
@@ -79,69 +89,28 @@ public class EmployeeMenuController {
 
 
     //Личная статистика
-    @FXML
-    private void onClickYourSuccessfulTrades(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
-        textArea.setText("*Ваши успешные сделки месяца*");
-    }
 
     @FXML
-    private void onClickCompareYourResults(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
-        textArea.setText("*Ваша статистика по месяцам*");
+    private void onClickProductivityChart(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
+        textArea.setText("*График продуктивности*");
     }
 
 
     //Статистика компании
     @FXML
-    private void onClickBestEmployee(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
-        textArea.setText("*Сотрудник месяца*");
+    private void onClickCompanyReport(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
+        textArea.setText("*Месячный отчет*");
     }
 
+    //Аккаунт
     @FXML
-    private void onClickCompanySuccessfulTrades(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
-        textArea.setText("*Наиболее успешные сделки  для компании в этом месяце*");
+    private void onClickChangeAccountData(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
+        textArea.setText("*Изменить логин/пароль*");
     }
 
-    @FXML
-    private void onClickCompareCompanyResults(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
-        textArea.setText("*Статистика компании по месяцам*");
-    }
-
-
-    //Сотрудники компании
-    @FXML
-    private void onClickShowEmployees(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
-        textArea.setText("*Список сотрудников*");
-    }
-
-    @FXML
-    private void onClickSearchEmployee(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
-        textArea.setText("*Поиск сотрудника*");
-    }
-
-
-    //Личные аккаунты
     @FXML
     private void onClickExit(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
         Main.setRoot("/main");
-    }
-    @FXML
-    private void onClickShowAccountData(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
-        textArea.setText("*Данные текущего аккаунта*");
-    }
-
-    @FXML
-    private void onClickChangeAccountData(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
-        textArea.setText("*Изменить данные текущего аккаунта*");
-    }
-
-    @FXML
-    private void onClickDeleteAccount(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
-        textArea.setText("*Удалить текущий аккаунт*");
-    }
-
-    @FXML
-    private void onClickShowAccounts(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
-        textArea.setText("*Показать список личных аккаунтов*");
     }
 
 }

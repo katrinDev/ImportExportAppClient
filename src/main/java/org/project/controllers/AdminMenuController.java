@@ -107,51 +107,19 @@ public class AdminMenuController {
 
     //Статистика компании
     @FXML
-    private void onClickBestEmployee(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
-        textArea.setText("*Сотрудник месяца*");
+    private void onClickCompanyReport(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
+        textArea.setText("*Месячный отчет*");
     }
 
+
+    //Аккаунт
     @FXML
-    private void onClickCompanySuccessfulTrades(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
-        textArea.setText("*Наиболее успешные сделки месяца*");
+    private void onClickChangeAccountData(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
+        textArea.setText("*Изменить логин/пароль*");
     }
 
-    @FXML
-    private void onClickCompareCompanyResults(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
-        textArea.setText("*Сравнить результаты с предыдущим месяцем*");
-    }
-
-
-    //Работа с текущим аккаунтом
     @FXML
     private void onClickExit(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
         Main.setRoot("/main");
-    }
-
-    @FXML
-    private void onClickShowAccountData(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
-        textArea.setText("*Данные текущего аккаунта*");
-    }
-
-    @FXML
-    private void onClickChangeAccountData(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
-        textArea.setText("*Изменить данные текущего аккаунта*");
-    }
-
-    @FXML
-    private void onClickDeleteAccount(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
-        textArea.setText("*Удалить текущий аккаунт*");
-    }
-
-
-    //Работа с личными аккаунтами
-    @FXML
-    private void onClickShowAccounts(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
-        textArea.setText("*Показать список личных аккаунтов*");
-    }
-
-    @FXML
-    private void onClickChangeAccountsData(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
-        textArea.setText("*Изменить данные одного из личных аккаунтов*");
     }
 }
