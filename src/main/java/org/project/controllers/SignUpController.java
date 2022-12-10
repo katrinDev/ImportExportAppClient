@@ -65,7 +65,7 @@ public class SignUpController {
             Client.sendMessage(request);//на сокет отправляем запрос
 
             Response response = Client.getMessage();
-            System.out.println(response);
+            System.out.println("Server: " + response);
 
             if(response.getResponseStatus() == ResponseStatus.OK) {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -73,16 +73,7 @@ public class SignUpController {
                 alert.setHeaderText(response.getResponseMessage());
                 alert.showAndWait();
 
-                /*Stage stage = (Stage) anchorPane.getScene().getWindow();
-                stage.close();*/
-
                 Main.setRoot("/main");
-                /*Scene scene = new Scene(Main.loadFXML("/main"));
-                stage = new Stage();
-                stage.setTitle("Магазин электроники и бытовой техники");
-                stage.setScene(scene);
-                stage.show();*/
-
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Ошибка");

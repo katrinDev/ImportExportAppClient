@@ -18,7 +18,7 @@ public class Main extends Application{
 
         Client.createInstance();
         try{
-            scene = new Scene(loadFXML("/main"));
+            scene = new Scene(loadFXML("/adminMenu"));
             stage.setTitle("Магазин электроники и бытовой техники");
             stage.setScene(scene);
             stage.show();

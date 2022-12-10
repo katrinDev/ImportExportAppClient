@@ -21,5 +21,6 @@
    <Button fx:id="backBtn" layoutX="431.0" layoutY="296.0" mnemonicParsing="false" onAction="#onBackBtnClick" prefHeight="38.0" prefWidth="90.0" style="-fx-font-weight: 700; -fx-border-radius: 10; -fx-background-radius: 10; -fx-background-color: #F4A460; -fx-border-color: #D2691E;" text="Назад" textFill="WHITE">
       <font>
          <Font size="14.0" />
-      </font></Button>
+      </font>
+   </Button>
 </AnchorPane>

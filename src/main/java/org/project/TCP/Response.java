@@ -40,4 +40,12 @@ public class Response {
         this.responseMessage = responseMessage;
     }
 
+    @Override
+    public String toString() {
+        return "Response{" +
+                "responseStatus=" + responseStatus +
+                ", responseMessage='" + responseMessage + '\'' +
+                ", responseData='" + responseData + '\'' +
+                '}';
+    }
 }
