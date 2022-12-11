@@ -7,6 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
@@ -25,17 +26,21 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
+import static javafx.scene.paint.Color.WHITE;
+
 public class AdminMenuController {
 
     @FXML
     public AnchorPane anchorPane;
     @FXML
-    public Pane innerPane;
+    public AnchorPane innerPane;
 
+    private final HelpfulFunctions helpfulFunctions = new HelpfulFunctions();
 
-    //Работа с пользователями
+    //РАБОТА С ПОЛЬЗОВАТЕЛЯМИ
+    //Список аккаунтов
     @FXML
-    private TableView<User> onClickShowUsers(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
+    TableView<User> onClickShowUsers(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
         innerPane.getChildren().clear();
 
         Request request = new Request();
@@ -99,103 +104,120 @@ public class AdminMenuController {
             return null;
         }
     }
+
+
+    //Изменить роль пользователя
     @FXML
     private void onClickChangeRole(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
         Label label = new Label("Выберите пользователя для изменения роли: ");
-        label.setLayoutX(300);
-        label.setLayoutY(100);
-        label.setStyle("-fx-font-size: 14; -fx-font-weight: 700; -fx-font-style: italic");
+
+        Button button = new Button();
+        Label selected = new Label();
+
         TableView<User> table = onClickShowUsers(actionEvent);
-        innerPane.getChildren().clear();
-
-
-        table.setEditable(true);
-        innerPane.getChildren().addAll(label, table);
+        helpfulFunctions.addSubmitControls(innerPane, table, label, button, selected, actionEvent);
 
         TableView.TableViewSelectionModel<User> selectionModel = table.getSelectionModel();
-        Label selected = new Label();
-        Button button = new Button();
-
         selectionModel.selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if(newValue != null) {
                 int id = newValue.getUserId();
 
-                selected.setText("Selected account: " + id);
-                selected.setLayoutX(300);
-                selected.setLayoutY(580);
-                selected.setStyle("-fx-font-size: 14; -fx-font-weight: 600;");
-
-                button.setVisible(true);
+                selected.setText("Выбранный аккаунт: " + id);
                 button.setText("Подтвердить");
-                button.setLayoutX(600);
-                button.setLayoutY(620);
-                button.setStyle("-fx-font-weight: 700; -fx-border-radius: 10; -fx-background-radius: 10; -fx-background-color: #F4A460; -fx-border-color: #D2691E;");
-                button.setPrefWidth(120.0);
-                button.setPrefHeight(38.0);
+
                 button.setOnAction(event -> {
-                    changeRoleButtonClick(id);
-                    label.setText("");
-                    button.setVisible(false);
+                    helpfulFunctions.submitRoleChange(id);
+
                     try {
                         onClickShowUsers(actionEvent);
                     } catch (Exception e) {
                         e.getStackTrace();
                     }
                 });
-                innerPane.getChildren().addAll(selected, button);
-
             }
         });
 
     }
 
-    private void changeRoleButtonClick(int id){
-        try {
-            User updatedUser = new User();
-            updatedUser.setUserId(id);
 
-            Request request = new Request();
-            request.setRequestMessage(new Gson().toJson(updatedUser));
-            request.setRequestType(RequestType.CHANGEROLE);
-
-            Client.sendMessage(request);
-
-            Response response = Client.getMessage();
-            System.out.println("Server: " + response);
-
-            if (response.getResponseStatus().equals(ResponseStatus.OK)){
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                updatedUser = new Gson().fromJson(response.getResponseData(), User.class);
-                alert.setHeaderText("Роль пользователя " + updatedUser.getLogin() + ": "
-                        + updatedUser.getRole().getRoleName());
-                alert.setTitle(response.getResponseMessage());
-                alert.showAndWait();
-
-
-            } else {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Ошибка");
-                alert.setHeaderText(response.getResponseMessage());
-                alert.showAndWait();
-            }
-        } catch(Exception e){
-            System.out.println("\n" + e.getClass());
-            e.getStackTrace();
-        }
-    }
-
-
+    //Удалить пользователя
     @FXML
     private void onClickDeleteUser(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
+
+        Label label = new Label("Выберите пользователя для удаления: ");
+        Button button = new Button();
+        Label selected = new Label();
+
+        TableView<User> table = onClickShowUsers(actionEvent);
+        helpfulFunctions.addSubmitControls(innerPane, table, label, button, selected, actionEvent);
+
+
+        TableView.TableViewSelectionModel<User> selectionModel = table.getSelectionModel();
+        selectionModel.selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if(newValue != null) {
+                int id = newValue.getUserId();
+                selected.setText("Выбранный аккаунт: " + id);
+
+                button.setVisible(true);
+
+                button.setOnAction(event -> {
+                    try {
+                        helpfulFunctions.submitDeleteUser(id);
+                        onClickShowUsers(actionEvent);
+
+                    } catch (Exception e) {
+                        e.getStackTrace();
+                    }
+                });
+            }
+        });
     }
 
+
+    //Добавить пользователя
     @FXML
     private void onClickAddUser(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
-//        textArea.setText("*Добавить пользователя*");
+        innerPane.getChildren().clear();
+
+        Label mainLabel = new Label("Добавление пользователя");
+
+        Label surnameLabel = new Label("Фамилия: ");
+        Label nameLabel = new Label("Имя: ");
+        Label loginLabel = new Label("Логин: ");
+        Label passwordLabel = new Label("Пароль: ");
+        Label passwordLabel2 = new Label("Подтвердите пароль: ");
+
+        TextField textFieldSurname = new TextField();
+        TextField textFieldName = new TextField();
+        TextField textFieldLogin = new TextField();
+        PasswordField passwordField = new PasswordField();
+        PasswordField passwordField2 = new PasswordField();
+
+        Button button = new Button("Подтвердить");
+
+        helpfulFunctions.addUserControlsStyles(mainLabel, surnameLabel, nameLabel, loginLabel, passwordLabel, passwordLabel2,
+                textFieldSurname, textFieldName, textFieldLogin, passwordField, passwordField2, button);
+
+        innerPane.getChildren().addAll(mainLabel, surnameLabel, nameLabel, loginLabel, passwordLabel, passwordLabel2, textFieldSurname,
+                textFieldLogin, textFieldName, passwordField, passwordField2, button);
+
+        button.setOnAction(event -> {
+            if(helpfulFunctions.isInputValid(textFieldSurname, textFieldName, textFieldLogin, passwordField, passwordField2, innerPane)){
+                try{
+                    helpfulFunctions.submitAddUser(2, textFieldSurname, textFieldName, textFieldLogin, passwordField);
+
+                    onClickShowUsers(actionEvent);
+
+                } catch (Exception e){
+                    e.getStackTrace();
+                }
+            }
+        });
     }
 
 
-    //Работа с сотрудниками
+    //РАБОТА С СОТРУДНИКАМИ
+    //Список сотрудников
     @FXML
     private void onClickShowEmployees(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
 //        textArea.setText("*Показать список сотрудников*");
