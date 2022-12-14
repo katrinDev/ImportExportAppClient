@@ -512,7 +512,7 @@ public class AdminMenuController {
     //РАБОТА С ТОВАРАМИ
     @FXML
     void onClickShowItems(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
-        helpfulFunctions.submitShowItems(innerPane);
+        helpfulFunctions.submitShowItems(1, innerPane);
     }
 
     @FXML
@@ -563,7 +563,7 @@ public class AdminMenuController {
         Button button = new Button();
         Label selected = new Label();
 
-        TableView<Item> table = helpfulFunctions.submitShowItems(innerPane);
+        TableView<Item> table = helpfulFunctions.submitShowItems(1, innerPane);
         helpfulFunctions.addSubmitControls(innerPane, table, label, button, selected);
 
 

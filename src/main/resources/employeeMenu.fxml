@@ -30,7 +30,7 @@
                                 <MenuItem mnemonicParsing="false" onAction="#onClickYourPartners" text="Партнеры контролируемых Вами сделок" />
                             </items>
                         </Menu>
-                  <Menu mnemonicParsing="false" text="Номенклатура компании">
+                  <Menu mnemonicParsing="false" text="Товары">
                     <items>
                       <MenuItem mnemonicParsing="false" onAction="#onClickShowItems" text="Список товаров" />
                         <MenuItem mnemonicParsing="false" onAction="#onClickFilterItems" text="Поиск" />

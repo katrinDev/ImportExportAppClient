@@ -23,6 +23,7 @@ import org.project.enums.ResponseStatus;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Predicate;
 
 
@@ -347,8 +348,8 @@ public class HelpfulFunctions {
         Response response = Client.getMessage();
 
         if(response.getResponseStatus() == ResponseStatus.OK) {
-            Type type = new TypeToken<ArrayList<Company>>(){}.getType();
-            ArrayList<Company> allCompanies = new Gson().fromJson(response.getResponseData(), type);
+            Type type = new TypeToken<List<Company>>(){}.getType();
+            List<Company> allCompanies = new Gson().fromJson(response.getResponseData(), type);
 
             ObservableList<Company> companies = FXCollections.observableArrayList(allCompanies);
             TableView<Company> table = new TableView<>(companies);
@@ -687,16 +688,23 @@ public class HelpfulFunctions {
         return AuthenticationController.check(errorMessage, innerPane);
     }
 
-    TableView<Item> submitShowItems(AnchorPane innerPane) throws IOException, ClassNotFoundException{
+    TableView<Item> submitShowItems(int itemsType, AnchorPane innerPane) throws IOException, ClassNotFoundException{
             innerPane.getChildren().clear();
             Request request = new Request();
-            request.setRequestType(RequestType.SHOWITEMS);
+            System.out.println(itemsType);
+            if(itemsType == 1) request.setRequestType(RequestType.SHOWITEMS);
+
+            else if(itemsType == 2) request.setRequestType(RequestType.SHOWEXPITEMS);
+
+            else if(itemsType == 3) request.setRequestType(RequestType.SHOWIMPITEMS);
 
             Client.sendMessage(request);
 
             Response response = Client.getMessage();
+             System.out.println(response.getResponseMessage());
 
-            if(response.getResponseStatus() == ResponseStatus.OK) {
+
+        if(response.getResponseStatus() == ResponseStatus.OK) {
                 Type type = new TypeToken<ArrayList<Item>>(){}.getType();
                 ArrayList<Item> allItems = new Gson().fromJson(response.getResponseData(), type);
 
@@ -710,7 +718,9 @@ public class HelpfulFunctions {
                 label.setLayoutX(300);
                 label.setLayoutY(100);
                 label.setStyle("-fx-font-size: 14; -fx-font-weight: 700; -fx-font-style: italic");
-
+                if(itemsType == 1){
+                    table.setPrefWidth(470);
+                }
 
                 innerPane.getChildren().addAll(label, table);
                 return table;
@@ -723,6 +733,7 @@ public class HelpfulFunctions {
                 return null;
             }
     }
+
 
     void submitAddItem(TextField textFieldName, TextField textFieldCost) throws IOException, ClassNotFoundException{
 

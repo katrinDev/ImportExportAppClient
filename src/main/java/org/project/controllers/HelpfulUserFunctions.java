@@ -49,7 +49,7 @@ public class HelpfulUserFunctions {
         return AuthenticationController.check(errorMessage, innerPane);
     }
 
-    void setAddTradeControls(String mainText, DatePicker datePicker, ChoiceBox<String> companyChoiceBox, Label selected, Label itemAmountLabel, TextField itemAmountTextField, Label areaLabel, TextArea textArea,
+    void setAddTradeControls(int companyType, String mainText, DatePicker datePicker, ChoiceBox<String> companyChoiceBox, Label selected, Label itemAmountLabel, TextField itemAmountTextField, Label areaLabel, TextArea textArea,
                              Button addToListButton, Button submitButton,TableView<Item> table, AnchorPane innerPane) throws IOException, ClassNotFoundException{
         Label mainLabel = new Label(mainText);
 
@@ -99,12 +99,17 @@ public class HelpfulUserFunctions {
         innerPane.getChildren().addAll(mainLabel, selected, table, companyLabel, dateLabel,
                 datePicker, choiceLabel);
 
-        setCompaniesChoiceBox(innerPane, companyChoiceBox);
+        setCompaniesChoiceBox(companyType, innerPane, companyChoiceBox);
     }
 
-    void setCompaniesChoiceBox(AnchorPane innerPane, ChoiceBox<String> companyChoiceBox) throws IOException, ClassNotFoundException{
+    void setCompaniesChoiceBox(int companyType, AnchorPane innerPane, ChoiceBox<String> companyChoiceBox) throws IOException, ClassNotFoundException{
         Request request = new Request();
-        request.setRequestType(RequestType.SHOWCOMPANIES);
+        if(companyType == 1) request.setRequestType(RequestType.SHOWCOMPANIES);
+
+        else if(companyType == 2) request.setRequestType(RequestType.SHOWEXPCOMPANIES);
+
+        else request.setRequestType(RequestType.SHOWIMPCOMPANIES);
+
         Client.sendMessage(request);
 
         Response response = Client.getMessage();
@@ -164,7 +169,6 @@ public class HelpfulUserFunctions {
 
 
 
-
     void submitAddTrade(int type, DatePicker datePicker, ChoiceBox<String> companyChoiceBox, List<Order> orders) throws IOException, ClassNotFoundException{
         TradeOperation addOperation = new TradeOperation();
 
@@ -188,6 +192,12 @@ public class HelpfulUserFunctions {
         Request request = new Request();
         request.setRequestMessage(new Gson().toJson(addOperation));
         request.setRequestType(RequestType.ADDTRADE);
+
+//        if(type == 1){
+//            request.setRequestType(RequestType.ADDEXPTRADE);
+//        } else{
+//            request.setRequestType(RequestType.ADDIMPTRADE);
+//        }
 
 //        Gson gson = new GsonBuilder().setDateFormat("MM-dd-yyyy").create();
 

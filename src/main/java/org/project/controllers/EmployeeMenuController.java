@@ -79,6 +79,30 @@ public class EmployeeMenuController {
         });
     }
 
+
+
+    //Работа с текущими импортными сделками
+    @FXML
+    TableView<TradeOperation> onClickShowImportTrades(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
+        innerPane.getChildren().clear();
+
+        Request request = new Request();
+        request.setRequestType(RequestType.SHOWMYIMPTRADES);
+        request.setRequestMessage(new Gson().toJson(Client.getUser()));
+
+        Client.sendMessage(request);
+
+        Label label = new Label("Список Ваших импортных операций: ");
+
+        return helpfulUserFunctions.showAnyTrades(innerPane, label);
+    }
+
+    @FXML
+    private void onClickAddImportTrade(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
+        String mainText = "Добавление импортной сделки: ";
+        addAnyTrade(mainText, innerPane, 2, actionEvent);
+    }
+
     @FXML
     private void onClickDeleteImpTrade(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
         Label label = new Label("Выберите импортную операцию для удаления: ");
@@ -110,28 +134,6 @@ public class EmployeeMenuController {
     }
 
 
-    //Работа с текущими импортными сделками
-    @FXML
-    TableView<TradeOperation> onClickShowImportTrades(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
-        innerPane.getChildren().clear();
-
-        Request request = new Request();
-        request.setRequestType(RequestType.SHOWMYIMPTRADES);
-        request.setRequestMessage(new Gson().toJson(Client.getUser()));
-
-        Client.sendMessage(request);
-
-        Label label = new Label("Список Ваших импортных операций: ");
-
-        return helpfulUserFunctions.showAnyTrades(innerPane, label);
-    }
-
-    @FXML
-    private void onClickAddImportTrade(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
-        String mainText = "Добавление импортной сделки: ";
-        addAnyTrade(mainText, innerPane, 2, actionEvent);
-    }
-
 
     //Компании-партнеры
     @FXML
@@ -155,7 +157,7 @@ public class EmployeeMenuController {
     //Номенклатура
     @FXML
     private void onClickShowItems(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
-        helpfulFunctions.submitShowItems(innerPane);
+        helpfulFunctions.submitShowItems(1, innerPane);
     }
     @FXML
     private void onClickFilterItems(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
@@ -183,7 +185,12 @@ public class EmployeeMenuController {
 
 
     void addAnyTrade(String mainText, AnchorPane innerPane, int type, ActionEvent actionEvent) throws IOException, ClassNotFoundException{
-        TableView<Item> table = helpfulFunctions.submitShowItems(innerPane);
+        TableView<Item> table;
+        int functionType;
+        if(type == 1)   functionType = 2;
+        else functionType = 3;
+
+        table = helpfulFunctions.submitShowItems(functionType, innerPane);
 
         ChoiceBox<String> companyChoiceBox = new ChoiceBox<>();
 
@@ -204,10 +211,12 @@ public class EmployeeMenuController {
         Button submitButton = new Button("Завершить оформление");
 
 
-        helpfulUserFunctions.setAddTradeControls(mainText, datePicker, companyChoiceBox, selected, itemAmountLabel, itemAmountTextField, areaLabel, textArea, addToListButton, submitButton, table,  innerPane);
+        helpfulUserFunctions.setAddTradeControls(functionType, mainText, datePicker, companyChoiceBox, selected, itemAmountLabel, itemAmountTextField, areaLabel, textArea, addToListButton, submitButton, table,  innerPane);
 
         List<Order> orders = new ArrayList<>();
 
+        addToListButton.setLayoutX(1150);
+        addToListButton.setLayoutY(325);
         innerPane.getChildren().addAll( itemAmountLabel, itemAmountTextField,
                 areaLabel, textArea, addToListButton, submitButton);
 

@@ -33,11 +33,11 @@
                     </items>
                   </Menu>
 
-                  <Menu mnemonicParsing="false" text="Номенклатура товаров">
+                  <Menu mnemonicParsing="false" text="Товары">
                     <items>
-                      <MenuItem mnemonicParsing="false" onAction="#onClickShowItems" text="Номенклатура компании" />
-                        <MenuItem mnemonicParsing="false" onAction="#onClickAddItem" text="Добавить новый продукт" />
-                        <MenuItem mnemonicParsing="false" onAction="#onClickDeleteItem" text="Удалить продукт" />
+                      <MenuItem mnemonicParsing="false" onAction="#onClickShowItems" text="Список товаров" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickAddItem" text="Добавить новый товар" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickDeleteItem" text="Удалить товар" />
                         <MenuItem mnemonicParsing="false" onAction="#onClickSearchItem" text="Поиск" />
                     </items>
                   </Menu>
