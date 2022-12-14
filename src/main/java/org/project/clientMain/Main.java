@@ -1,12 +1,10 @@
 package org.project.clientMain;
 
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 
@@ -18,7 +16,7 @@ public class Main extends Application{
 
         Client.createInstance();
         try{
-            scene = new Scene(loadFXML("/adminMenu"));
+            scene = new Scene(loadFXML("/main"));
             stage.setTitle("Магазин электроники и бытовой техники");
             stage.setScene(scene);
             stage.show();

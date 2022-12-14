@@ -27,36 +27,28 @@
                 </Menu>
                   <Menu mnemonicParsing="false" text="Компании-партнеры">
                     <items>
-                      <MenuItem mnemonicParsing="false" text="Просмотреть данные" />
-                        <MenuItem mnemonicParsing="false" text="Изменить данные " />
-                        <MenuItem mnemonicParsing="false" text="Добавить партнера" />
-                        <MenuItem mnemonicParsing="false" text="Удалить партнера" />
+                      <MenuItem mnemonicParsing="false" onAction="#onClickShowCompanies" text="Просмотреть данные" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickAddCompany" text="Добавить партнера" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickDeleteCompany" text="Удалить партнера" />
                     </items>
                   </Menu>
-                  <Menu mnemonicParsing="false" text="Товарные группы">
-                    <items>
-                      <MenuItem mnemonicParsing="false" onAction="#onClickAddGroup" text="Добавить группу" />
-                        <MenuItem mnemonicParsing="false" onAction="#onClickShowGroups" text="Просмотреть существующие группы" />
-                        <MenuItem mnemonicParsing="false" onAction="#onClickDeleteGroup" text="Удалить группу" />
-                        <MenuItem mnemonicParsing="false" onAction="#onClickChangeGroupData" text="Изменить данные группы" />
-                    </items>
-                  </Menu>
+
                   <Menu mnemonicParsing="false" text="Номенклатура товаров">
                     <items>
                       <MenuItem mnemonicParsing="false" onAction="#onClickShowItems" text="Номенклатура компании" />
-                        <MenuItem mnemonicParsing="false" onAction="#onClickChangeItem" text="Изменить данные продукта" />
                         <MenuItem mnemonicParsing="false" onAction="#onClickAddItem" text="Добавить новый продукт" />
                         <MenuItem mnemonicParsing="false" onAction="#onClickDeleteItem" text="Удалить продукт" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickSearchItem" text="Поиск" />
                     </items>
                   </Menu>
+
                   <Menu mnemonicParsing="false" text="Статистика компании">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#onClickCompanyReport" text="Просмотр месячного отчета" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickCompanyReport" text="Создание отчета" />
                     </items>
                   </Menu>
                 <Menu mnemonicParsing="false" text="Аккаунт">
                   <items>
-                      <MenuItem mnemonicParsing="false" onAction="#onClickChangeAccountData" text="Изменить логин/пароль" />
                       <MenuItem mnemonicParsing="false" onAction="#onClickExit" text="Выход" />
                   </items>
                 </Menu>

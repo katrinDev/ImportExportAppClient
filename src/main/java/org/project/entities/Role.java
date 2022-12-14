@@ -10,7 +10,6 @@ public class Role {
     private String roleName;
     private transient List<User> users;
 
-
     public List<User> getUsers() {
         return users;
     }

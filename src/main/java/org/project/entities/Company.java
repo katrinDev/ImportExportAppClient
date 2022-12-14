@@ -66,4 +66,15 @@ public class Company {
     public int hashCode() {
         return Objects.hash(companyId, companyName, country, checkingAccount, companyEmail);
     }
+
+    @Override
+    public String toString() {
+        return "Company{" +
+                "companyId=" + companyId +
+                ", companyName='" + companyName + '\'' +
+                ", country='" + country + '\'' +
+                ", checkingAccount='" + checkingAccount + '\'' +
+                ", companyEmail='" + companyEmail + '\'' +
+                '}';
+    }
 }

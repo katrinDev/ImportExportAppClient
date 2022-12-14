@@ -4,28 +4,28 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: cornflowerblue;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.project.controllers.SignUpController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1550.0" style="-fx-background-color: cornflowerblue;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.project.controllers.SignUpController">
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="190.0" layoutY="21.0" prefHeight="38.0" prefWidth="220.0" style="-fx-font-weight: 700;" text="Регистрация пользователя" textFill="WHITE">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="650.0" layoutY="180.0" prefHeight="38.0" prefWidth="220.0" style="-fx-font-weight: 700;" text="Регистрация пользователя" textFill="WHITE">
          <font>
-            <Font size="15.0" />
+            <Font size="16.0" />
          </font></Label>
-      <Label layoutX="138.0" layoutY="72.0" prefHeight="26.0" prefWidth="69.0" style="-fx-font-size: 14; -fx-font-weight: 700;" text="Фамилия:" textFill="WHITE" />
-      <Label layoutX="138.0" layoutY="127.0" style="-fx-font-size: 14; -fx-font-weight: 700;" text="Имя:" textFill="WHITE" />
-      <Label layoutX="138.0" layoutY="177.0" style="-fx-font-size: 14; -fx-font-weight: 700;" text="Логин:" textFill="WHITE" />
-      <Label layoutX="140.0" layoutY="228.0" style="-fx-font-size: 14; -fx-font-weight: 700;" text="Пароль:  " textFill="WHITE" />
-      <TextField fx:id="textFieldSurname" layoutX="316.0" layoutY="73.0" />
-      <TextField fx:id="textFieldName" layoutX="315.0" layoutY="124.0" />
-      <TextField fx:id="textFieldLogin" layoutX="316.0" layoutY="174.0" />
-      <Button fx:id="submitBtn" layoutX="319.0" layoutY="331.0" mnemonicParsing="false" onAction="#onSubmitBtnClick" prefHeight="38.0" prefWidth="90.0" style="-fx-font-weight: 700; -fx-border-radius: 10; -fx-background-radius: 10; -fx-background-color: #F4A460; -fx-border-color: #D2691E;" text="OK" textFill="WHITE" />
-      <Label layoutX="138.0" layoutY="279.0" style="-fx-font-weight: 700;" text="Подтвердите пароль:" textFill="WHITE">
+      <Label layoutX="591.0" layoutY="261.0" prefHeight="26.0" prefWidth="90.0" style="-fx-font-size: 16; -fx-font-weight: 700;" text="Фамилия:" textFill="WHITE" />
+      <Label layoutX="594.0" layoutY="316.0" style="-fx-font-size: 16; -fx-font-weight: 700;" text="Имя:" textFill="WHITE" />
+      <Label layoutX="594.0" layoutY="363.0" style="-fx-font-size: 16; -fx-font-weight: 700;" text="Логин:" textFill="WHITE" />
+      <Label layoutX="594.0" layoutY="415.0" style="-fx-font-size: 16; -fx-font-weight: 700;" text="Пароль:  " textFill="WHITE" />
+      <TextField fx:id="textFieldSurname" layoutX="777.0" layoutY="262.0" />
+      <TextField fx:id="textFieldName" layoutX="778.0" layoutY="313.0" />
+      <TextField fx:id="textFieldLogin" layoutX="778.0" layoutY="360.0" />
+      <Button fx:id="submitBtn" layoutX="814.0" layoutY="549.0" mnemonicParsing="false" onAction="#onSubmitBtnClick" prefHeight="38.0" prefWidth="90.0" style="-fx-font-weight: 700; -fx-border-radius: 10; -fx-background-radius: 10; -fx-background-color: #F4A460; -fx-border-color: #D2691E;" text="OK" textFill="WHITE" />
+      <Label layoutX="596.0" layoutY="471.0" style="-fx-font-weight: 700;" text="Подтвердите пароль:" textFill="WHITE">
          <font>
-            <Font size="14.0" />
+            <Font size="16.0" />
          </font>
       </Label>
-      <PasswordField fx:id="passwordField" layoutX="316.0" layoutY="276.0" />
-      <PasswordField fx:id="passwordField2" layoutX="315.0" layoutY="225.0" prefHeight="26.0" prefWidth="150.0" />
-      <Button fx:id="backBtn" layoutX="444.0" layoutY="331.0" mnemonicParsing="false" onAction="#onBackBtnClick" prefHeight="38.0" prefWidth="90.0" style="-fx-font-weight: 700; -fx-border-radius: 10; -fx-background-radius: 10; -fx-background-color: #F4A460; -fx-border-color: #D2691E;" text="Назад" textFill="WHITE">
+      <PasswordField fx:id="passwordField" layoutX="778.0" layoutY="412.0" />
+      <PasswordField fx:id="passwordField2" layoutX="777.0" layoutY="468.0" prefHeight="26.0" prefWidth="150.0" />
+      <Button fx:id="backBtn" layoutX="928.0" layoutY="549.0" mnemonicParsing="false" onAction="#onBackBtnClick" prefHeight="38.0" prefWidth="90.0" style="-fx-font-weight: 700; -fx-border-radius: 10; -fx-background-radius: 10; -fx-background-color: #F4A460; -fx-border-color: #D2691E;" text="Назад" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font></Button>

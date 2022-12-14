@@ -4,28 +4,28 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: cornflowerblue;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.project.controllers.MainController">
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1550.0" style="-fx-background-color: cornflowerblue;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.project.controllers.MainController">
    <children>
-      <Label layoutX="108.0" layoutY="96.0" prefHeight="111.0" prefWidth="399.0" style="-fx-font-weight: 700;" text="Система контроля внешнеторговых операций" textAlignment="CENTER" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS">
+      <Label layoutX="556.0" layoutY="310.0" prefHeight="111.0" prefWidth="421.0" style="-fx-font-weight: 700;" text="Система контроля внешнеторговых операций" textAlignment="CENTER" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS">
          <font>
-            <Font size="17.0" />
+            <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="89.0" layoutY="235.0" mnemonicParsing="false" onAction="#onAuthBtnClick" prefHeight="44.0" prefWidth="116.0" style="-fx-font-weight: 700; -fx-border-radius: 10; -fx-background-radius: 10; -fx-background-color: #F4A460; -fx-border-color: #D2691E;" text="Вход" textAlignment="CENTER" textFill="WHITE">
+      <Button layoutX="508.0" layoutY="489.0" mnemonicParsing="false" onAction="#onAuthBtnClick" prefHeight="44.0" prefWidth="116.0" style="-fx-font-weight: 700; -fx-border-radius: 10; -fx-background-radius: 10; -fx-background-color: #F4A460; -fx-border-color: #D2691E;" text="Вход" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font size="13.0" />
+            <Font size="14.0" />
          </font>
       </Button>
 
-      <Button layoutX="249.0" layoutY="235.0" mnemonicParsing="false" onAction="#onRegisterBtnClick" prefHeight="44.0" prefWidth="116.0" style="-fx-font-weight: 700;       -fx-border-radius: 10; -fx-background-radius: 10; -fx-background-color: #F4A460; -fx-border-color: #D2691E;" text="Регистрация" textFill="WHITE">
+      <Button layoutX="694.0" layoutY="489.0" mnemonicParsing="false" onAction="#onRegisterBtnClick" prefHeight="44.0" prefWidth="116.0" style="-fx-font-weight: 700;       -fx-border-radius: 10; -fx-background-radius: 10; -fx-background-color: #F4A460; -fx-border-color: #D2691E;" text="Регистрация" textFill="WHITE">
          <font>
-            <Font size="13.0" />
+            <Font size="14.0" />
          </font>
       </Button>
 
-      <Button layoutX="409.0" layoutY="235.0" mnemonicParsing="false" onAction="#onQuitBtnClick" prefHeight="44.0" prefWidth="154.0" style="-fx-font-weight: 700;       -fx-border-radius: 10; -fx-background-radius: 10; -fx-background-color: #F4A460; -fx-border-color: #D2691E;" text="Завершение работы " textFill="WHITE">
+      <Button layoutX="859.0" layoutY="489.0" mnemonicParsing="false" onAction="#onQuitBtnClick" prefHeight="44.0" prefWidth="168.0" style="-fx-font-weight: 700;       -fx-border-radius: 10; -fx-background-radius: 10; -fx-background-color: #F4A460; -fx-border-color: #D2691E;" text="Завершение работы " textFill="WHITE">
          <font>
-            <Font size="13.0" />
+            <Font size="14.0" />
          </font>
       </Button>
 

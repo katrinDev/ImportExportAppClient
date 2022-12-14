@@ -40,7 +40,7 @@ public class SignUpController {
     }
     @FXML
     private void onSubmitBtnClick(ActionEvent actionEvent) throws IOException, ClassNotFoundException{
-        if(helpfulFunctions.isInputValid(textFieldSurname, textFieldName, textFieldLogin,
+        if(helpfulFunctions.checkUserInput(textFieldSurname, textFieldName, textFieldLogin,
                 passwordField, passwordField2, anchorPane)){
             helpfulFunctions.submitAddUser(1, textFieldSurname, textFieldName, textFieldLogin,
                     passwordField);

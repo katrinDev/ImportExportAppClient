@@ -60,11 +60,16 @@ public class AuthenticationController {
             alert.hide();
 
             if(response.getResponseStatus() == ResponseStatus.OK) {
-                 Role role = new Gson().fromJson(response.getResponseData(), Role.class);
 
-                 System.out.println("\nАутентификация прошла успешно!");
-                 alert.close();
-                 if(role.getRoleId() == 1){
+                System.out.println("\nАутентификация прошла успешно!");
+                User user = new Gson().fromJson(response.getResponseData(), User.class);
+
+                System.out.println(user);
+                Client.setUser(user);
+                alert.close();
+
+
+                 if(Client.getUser().getRole().getRoleId() == 1){
                      Main.setRoot("/adminMenu");
                  }
                  else{

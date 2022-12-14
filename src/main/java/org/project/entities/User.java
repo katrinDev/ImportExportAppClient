@@ -1,6 +1,10 @@
 package org.project.entities;
 
+import com.google.gson.annotations.Expose;
+
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 public class User {
 
@@ -10,22 +14,22 @@ public class User {
 
     private String password;
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "userId=" + userId +
-                ", login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                ", role=" + role +
-                ", person=" + person +
-                '}';
-    }
-
-
     private Role role;
 
-
     private Person person;
+
+
+    @Expose(serialize = false)
+    private Set<TradeOperation> operations = new HashSet<>();
+
+
+    public Set<TradeOperation> getOperations() {
+        return operations;
+    }
+
+    public void setOperations(Set<TradeOperation> operations) {
+        this.operations = operations;
+    }
 
     public int getUserId() {
         return userId;
@@ -78,5 +82,16 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(userId, login, password, role, person);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", role=" + role +
+                ", person=" + person +
+                '}';
     }
 }
